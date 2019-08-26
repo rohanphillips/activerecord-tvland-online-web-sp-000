@@ -4,8 +4,11 @@ class Show < ActiveRecord::Base
   belongs_to :network
 
   def actors_list
-    binding.pry
-    Show.actors
+    collection = []
+    self.characters.joins(:actor).each{|item|
+      collection << (item.name + " - " + item.actor.name)
+    }
+    collection
   end
 
 end
