@@ -8,7 +8,7 @@ class Actor < ActiveRecord::Base
 
     def list_roles
 
-      records = Character.joins(:actors).first
+      records = Actor.joins(characters: :shows).first
       binding.pry
       self.characters.name
     end
