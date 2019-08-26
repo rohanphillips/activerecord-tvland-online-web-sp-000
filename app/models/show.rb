@@ -6,5 +6,5 @@ class Show < ActiveRecord::Base
   def actors_list
     Show.actors
   end
-  
+
 end
